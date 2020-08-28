@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/startBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서비스 START"
+        android:theme="@style/StandardButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/stopBtn"
+        android:onClick="serviceStart" />
+
+    <TextView
+        android:id="@+id/stopBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서비스 STOP"
+        android:theme="@style/StandardButton"
+        app:layout_constraintTop_toTopOf="@id/startBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/startBtn"
+        android:onClick="serviceStop"/>
+
+    <TextView
+        android:id="@+id/bindBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서비스 BIND"
+        android:theme="@style/StandardButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/unbindBtn"
+        app:layout_constraintTop_toBottomOf="@id/startBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="serviceBind"/>
+
+
+    <TextView
+        android:id="@+id/unbindBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서비스 UNBIND"
+        android:theme="@style/StandardButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bindBtn"
+        app:layout_constraintTop_toTopOf="@id/bindBtn"
+        app:layout_constraintBottom_toBottomOf="@id/bindBtn"
+        android:onClick="serviceUnBind"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서비스 함수 호출"
+        android:theme="@style/StandardButton"
+        app:layout_constraintTop_toBottomOf="@id/bindBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="callServiceFunction"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
